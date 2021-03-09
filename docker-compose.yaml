@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+  object_detection:
+    external: false
+
+services:
+  cvapi:
+    container_name: api
+    image:
+    volumes:
+      - "/app/models"
+      - ".:/app"
+    stdin_open: true # This is for using pdb
+    tty: true # This is for using pdb
+    ports:
+      - "5000:5000"
+    networks: 
+      - object_detection

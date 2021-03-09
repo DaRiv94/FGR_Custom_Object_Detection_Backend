@@ -1,0 +1,6 @@
+tensorflow
+numpy==1.19.2
+opencv-python
+flask
+pillow
+easydict
