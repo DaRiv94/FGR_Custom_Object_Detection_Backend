@@ -14,7 +14,8 @@ ADD https://onedrive.live.com/download?cid=4096C8A9EB1D4246&resid=4096C8A9EB1D42
 # # RUN apt-get install -y git gcc libmemcached-dev openssh-client
 # RUN apt-get install -y git gcc libmemcached-dev
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update 
+# RUN apt-get update && apt-get upgrade -y
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 
@@ -36,5 +37,11 @@ RUN rm ./license_plate.weights
 ## These cmds be overided when addtional args are provided during runtime
 CMD ["python", "app.py"]
 
-# CMD ["sh"]
+# FROM python:3.8-alpine
 
+# ## Main directory
+# WORKDIR /app
+
+# COPY --from=0 /app /app
+
+# CMD ["python", "app.py"]

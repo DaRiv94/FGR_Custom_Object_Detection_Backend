@@ -7,13 +7,14 @@ networks:
 services:
   cvapi:
     container_name: api
-    image:
+    image: testdown23
     volumes:
       - "/app/models"
       - ".:/app"
+    env_file: .env
     stdin_open: true # This is for using pdb
     tty: true # This is for using pdb
     ports:
-      - "5000:5000"
+      - "6000:6000"
     networks: 
       - object_detection

@@ -4,3 +4,4 @@ opencv-python
 flask
 pillow
 easydict
+python-dotenv

@@ -6,8 +6,8 @@ When pulling down from github either build the docker container or pull the dock
 Run With Docker
 ---
 
-1. Pull image `docker pull dariv94/license_plate_detector:1.0` This will take a few minutes since the Dependancies to run tensorflow, opencv-python and numpy are large.
-2. Run Container `docker run --rm --name testcon01 -p 5000:5000 dariv94/license_plate_detector`
+1. Pull image `docker pull dariv94/license_plate_detector:1.0` This will take some time since the dependancies to run tensorflow, opencv-python and numpy are large.
+2. Run Container `docker run --rm -p 5000:5000 dariv94/license_plate_detector`
 
 
 Local Run
@@ -44,7 +44,7 @@ You should now have able to send a request http://localhost:5000/image
 Example using Curl:
 *Windows uses curl.exe, for linux and mac just use curl*
 ```
-curl.exe -X POST -F images=@your/path/to/car.jpg "http://localhost:5000/image" --output test.png
+curl.exe -X POST -F images=@your/path/to/your/car.jpg "http://localhost:5000/image" --output test.png
 ```
 
 
