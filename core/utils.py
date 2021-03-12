@@ -85,15 +85,30 @@ def load_config(FLAGS):
         ANCHORS = get_anchors(cfg.YOLO.ANCHORS_TINY, FLAGS.tiny)
         XYSCALE = cfg.YOLO.XYSCALE_TINY if FLAGS.model == 'yolov4' else [1, 1]
     else:
-        STRIDES = np.array(cfg.YOLO.STRIDES)
+        STRIDES = np.array(cfg.YOLO.STRIDES) #__C.YOLO.STRIDES = [8, 16, 32]
         if FLAGS.model == 'yolov4':
-            ANCHORS = get_anchors(cfg.YOLO.ANCHORS, FLAGS.tiny)
+            ANCHORS = get_anchors(cfg.YOLO.ANCHORS, FLAGS.tiny) #__C.YOLO.ANCHORS = [12,16, 19,36, 40,28, 36,75, 76,55, 72,146, 142,110, 192,243, 459,401]
         elif FLAGS.model == 'yolov3':
-            ANCHORS = get_anchors(cfg.YOLO.ANCHORS_V3, FLAGS.tiny)
+            ANCHORS = get_anchors(cfg.YOLO.ANCHORS_V3, FLAGS.tiny) #__C.YOLO.ANCHORS_V3 = [10,13, 16,30, 33,23, 30,61, 62,45, 59,119, 116,90, 156,198, 373,326]
         XYSCALE = cfg.YOLO.XYSCALE if FLAGS.model == 'yolov4' else [1, 1, 1]
     NUM_CLASS = len(read_class_names(cfg.YOLO.CLASSES))
 
     return STRIDES, ANCHORS, NUM_CLASS, XYSCALE
+    #STRIDES
+    #array([ 8, 16, 32])
+
+    #ANCHORS
+    # array([[[ 12,  16],
+    #     [ 19,  36],
+    #     [ 40,  28]],
+
+    #    [[ 36,  75],
+    #     [ 76,  55],
+    #     [ 72, 146]],
+
+    #    [[142, 110],
+    #     [192, 243],
+    #     [459, 401]]])
 
 def get_anchors(anchors_path, tiny=False):
     anchors = np.array(anchors_path)
