@@ -11,22 +11,9 @@ import warnings
 import core.utils as utils
 from core.config import cfg
 
-# from yolov3_tf2.models import (
-#     YoloV3, YoloV3Tiny
-# )
-# from yolov3_tf2.dataset import transform_images, load_tfrecord_dataset
-# from yolov3_tf2.utils import draw_outputs
 from flask import Flask, request, Response, jsonify, send_from_directory, abort
 import os
 
-# print("Setting up GPU")
-
-# # Enable GPU dynamic memory allocation
-# gpus = tf.config.experimental.list_physical_devices('GPU')
-# for gpu in gpus:
-#     tf.config.experimental.set_memory_growth(gpu, True)
-
-# print("Done...setting up GPU")
 print("Starting flask")
 # Initialize Flask application
 app = Flask(__name__)
@@ -52,11 +39,7 @@ def detect_license_plate():
     image = request.files["images"]
     image_name = image.filename
     image.save(os.path.join(os.getcwd(), image_name))
-    # import pdb;pdb.set_trace()
-    # img_raw = tf.image.decode_image(
-    #     open(image_name, 'rb').read(), channels=3)
-    # img = tf.expand_dims(img_raw, 0)
-    # img = transform_images(img, size)
+ 
     print('looking for license_plates...:')
     print('Running inference for {}... '.format(image_name), end='')
 
@@ -92,7 +75,6 @@ def detect_license_plate():
     pred_bbox = [boxes.numpy(), scores.numpy(), classes.numpy(), valid_detections.numpy()]
 
     # read in all class names from config
-    # class_names = utils.read_class_names("./license_plate.names")
     class_names = utils.read_class_names(cfg.YOLO.CLASSES)
 
     # by default allow all classes in .names file
