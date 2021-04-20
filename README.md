@@ -1,17 +1,21 @@
-This is my FGR Object Detection BACKEND
+This is FGR Custom Vision License Plate Detector BACKEND
 
-
-When pulling down from github either build the docker container or pull the docker image. the docker image will have the model already and the DOCKERFILE knows to pull weights and build container (I could use secrets to help build decide what model to make? or just use mutiple dockerfiles.)
+<!-- When pulling down from github either build the docker container or pull the docker image. the docker image will have the model already and the DOCKERFILE knows to pull weights and build container (I could use secrets to help build decide what model to make? or just use mutiple dockerfiles.) -->
 
 Run With Docker
 ---
 
-1. Pull image `docker pull dariv94/license_plate_detector:1.0` This will take some time since the dependancies to run tensorflow, opencv-python and numpy are large.
-2. Run Container `docker run --rm -p 5000:5000 dariv94/license_plate_detector`
+1. Pull image `docker pull dariv94/license_plate_detector:2.0` This will take some time since the dependancies to run tensorflow, opencv-python and numpy are large.
+2. Run Container `docker run --rm -p 5000:5000 dariv94/license_plate_detector:2.0`
+3. Once Running, You should be apply to make a request as follows
 
+    
+| method |   endpoint   |   body   |
+|---------------------|----------|----------|
+| POST        | http://localhost:5000/image       | Form Data: images + YourImage.png/.jpeg/.jpg/.bmp      |
 
-Local Run
----
+<!-- Local Run
+
 
 1. Install Python 3.8 you can find a python 3.8 version [here](https://www.python.org/downloads/)
 
@@ -45,8 +49,8 @@ Example using Curl:
 *Windows uses curl.exe, for linux and mac just use curl*
 ```
 curl.exe -X POST -F images=@your/path/to/your/car.jpg "http://localhost:5000/image" --output test.png
-```
-
+``` -->
+[<img src="./images/FGR_Transparent.png" width="100" />](https://frankieriviera.com)
 
 This is an FGR project. 
 
