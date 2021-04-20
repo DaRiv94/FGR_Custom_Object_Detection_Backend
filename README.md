@@ -1,5 +1,7 @@
 FGR Custom Vision License Plate Detector BACKEND
----
+
+This is the backend API for the FGR Custom Vision License Plate Detector. It showcases some of my experience with Computer Vision. Specificlly in the relam of Object Detection dn Object Localization. I utilize the [YOLOv4](https://arxiv.org/abs/2004.10934v1) Object Detection Algorithm.
+
 **TODO(UPDATE LINK HERE)**
 Learn More about my FGR Custom Vision License Plate Detector [here](https://frankieriviera.com)
 
