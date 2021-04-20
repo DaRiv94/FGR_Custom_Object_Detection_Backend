@@ -1,4 +1,7 @@
-This is FGR Custom Vision License Plate Detector BACKEND
+FGR Custom Vision License Plate Detector BACKEND
+---
+**TODO(UPDATE LINK HERE)**
+Learn More about my FGR Custom Vision License Plate Detector [here](https://frankieriviera.com)
 
 <!-- When pulling down from github either build the docker container or pull the docker image. the docker image will have the model already and the DOCKERFILE knows to pull weights and build container (I could use secrets to help build decide what model to make? or just use mutiple dockerfiles.) -->
 
@@ -7,7 +10,7 @@ Run With Docker
 
 1. Pull image `docker pull dariv94/license_plate_detector:2.0` This will take some time since the dependancies to run tensorflow, opencv-python and numpy are large.
 2. Run Container `docker run --rm -p 5000:5000 dariv94/license_plate_detector:2.0`
-3. Once Running, You should be apply to make a request as follows
+3. This may take a minute or two to get up a running, but then you should be apply to make a request as follows
 
     
 | method |   endpoint   |   body   |
