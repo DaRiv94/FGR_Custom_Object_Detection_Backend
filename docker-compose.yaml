@@ -7,7 +7,7 @@ networks:
 services:
   cvapi:
     container_name: api
-    image: testdown23
+    image: dariv94/license_plate_detector:2.0
     volumes:
       - "/app/models"
       - ".:/app"
@@ -15,6 +15,6 @@ services:
     stdin_open: true # This is for using pdb
     tty: true # This is for using pdb
     ports:
-      - "6000:6000"
+      - "5000:5000"
     networks: 
       - object_detection

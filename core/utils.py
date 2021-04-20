@@ -94,6 +94,10 @@ def load_config(FLAGS):
     NUM_CLASS = len(read_class_names(cfg.YOLO.CLASSES))
 
     return STRIDES, ANCHORS, NUM_CLASS, XYSCALE
+    #XYSCALE
+    #[1.2, 1.1, 1.05]
+    #NUM_CLASS
+    #1
     #STRIDES
     #array([ 8, 16, 32])
 

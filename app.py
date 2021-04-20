@@ -31,8 +31,13 @@ print("Starting flask")
 # Initialize Flask application
 app = Flask(__name__)
 port = int(os.environ.get("PORT", 5000))
+environment = os.environ.get("ENV", "production")
+# TODO need to implment CORS for local development with local frontend
+if environment=="development":
+    print("Using CORS in Development enviornment")
+    # from flask_cors import CORS 
+    # cors = CORS(app)
 print(f"getting port: {port}")
-# some_var = {"muffinman":{"type":"man","food":"muffin"}}
 print("Loading in Saved Object Detection Model")
 t1 = time.time()
 saved_model_loaded = tf.saved_model.load('./models/license_plate-416', tags=[tag_constants.SERVING])

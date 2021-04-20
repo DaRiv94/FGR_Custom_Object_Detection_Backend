@@ -2,6 +2,7 @@ tensorflow
 numpy==1.19.2
 opencv-python
 flask
+flask-cors
 pillow
 easydict
 python-dotenv

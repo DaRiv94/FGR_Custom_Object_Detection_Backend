@@ -14,6 +14,9 @@ from core.config import cfg
 # XYSCALE = cfg.YOLO.XYSCALE
 # ANCHORS = utils.get_anchors(cfg.YOLO.ANCHORS)
 
+#YOLO(input_layer, NUM_CLASS, FLAGS.model, FLAGS.tiny)
+# Keras.Input([416,416,3]), 1, yolov4, false
+#This returns the feature_maps in save_model.py
 def YOLO(input_layer, NUM_CLASS, model='yolov4', is_tiny=False):
     if is_tiny:
         if model == 'yolov4':
@@ -67,6 +70,9 @@ def YOLOv3(input_layer, NUM_CLASS):
     conv_sbbox = common.convolutional(conv_sobj_branch, (1, 1, 256, 3 * (NUM_CLASS + 5)), activate=False, bn=False)
 
     return [conv_sbbox, conv_mbbox, conv_lbbox]
+
+#Keras.Input([416,416,3]), 1,
+#This returns the feature_maps in YOLO and then to save_model.py
 
 def YOLOv4(input_layer, NUM_CLASS):
     route_1, route_2, conv = backbone.cspdarknet53(input_layer)
