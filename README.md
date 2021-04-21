@@ -2,10 +2,14 @@ FGR Custom Vision License Plate Detector BACKEND
 
 This is the backend API for the FGR Custom Vision License Plate Detector. It showcases some of my experience with Computer Vision. Specificlly in the relam of Object Detection dn Object Localization. I utilize the [YOLOv4](https://arxiv.org/abs/2004.10934v1) Object Detection Algorithm.
 
-**TODO(UPDATE LINK HERE)**
-Learn More about my FGR Custom Vision License Plate Detector [here](https://frankieriviera.com)
+Learn More
+---
+Learn More about my FGR Custom Vision License Plate Detector [here](https://frankieriviera.com/portfolio/custom-vision)
 
 <!-- When pulling down from github either build the docker container or pull the docker image. the docker image will have the model already and the DOCKERFILE knows to pull weights and build container (I could use secrets to help build decide what model to make? or just use mutiple dockerfiles.) -->
+Example
+---
+![](images/FGR_Custom_Vision_License_Plate_Detector.gif)
 
 Run With Docker
 ---
