@@ -20,8 +20,8 @@ app = Flask(__name__)
 port = int(os.environ.get("PORT", 5000))
 environment = os.environ.get("ENV", "production")
 # TODO need to implment CORS for local development with local frontend
-if environment=="development":
-    print("Using CORS in Development enviornment")
+# if environment=="development":
+#     print("Using CORS in Development enviornment")
     # from flask_cors import CORS 
     # cors = CORS(app)
 print(f"getting port: {port}")
@@ -36,6 +36,7 @@ input_size = 416
 
 @app.route('/image', methods=['POST'])
 def detect_license_plate():
+    #Get Image
     image = request.files["images"]
     image_name = image.filename
     image.save(os.path.join(os.getcwd(), image_name))

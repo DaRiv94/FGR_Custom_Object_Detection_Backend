@@ -4,6 +4,7 @@ FROM  python:3.8-slim
 ## Main directory
 WORKDIR /app
 
+## Download license_plate.weights file
 ADD https://onedrive.live.com/download?cid=4096C8A9EB1D4246&resid=4096C8A9EB1D4246%211338032&authkey=AAj07WGHXhheDKQ ./license_plate.weights
 
 
@@ -21,8 +22,10 @@ RUN  pip install --upgrade pip && \
 ## Copy all files into /app directory
 COPY . .
 
+## Convert license_plate.weights file into tensorflow savedmodel format for use with tensorflow
 RUN python save_model.py --weights ./license_plate.weights \
     --output ./models/license_plate-416 --input_size 416 --model yolov4 
+
 
 RUN rm ./license_plate.weights
 
